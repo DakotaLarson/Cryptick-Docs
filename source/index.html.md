@@ -1,241 +1,114 @@
 ---
 title: API Reference
 
-language_tabs: # must be one of https://git.io/vQNgJ
-  - shell
-  - ruby
-  - python
-  - javascript
-
 toc_footers:
   - <a href='#'>Sign Up for a Developer Key</a>
-  - <a href='https://github.com/slatedocs/slate'>Documentation Powered by Slate</a>
 
 includes:
+  - http
+  - websocket
   - errors
+  - enums
+  - notes
 
 search: true
 
-code_clipboard: true
+code_clipboard: false
 ---
 
 # Introduction
 
-Welcome to the Kittn API! You can use our API to access Kittn API endpoints, which can get information on various cats, kittens, and breeds in our database.
+Welcome to the Cryptick API!
 
-We have language bindings in Shell, Ruby, Python, and JavaScript! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.
+If you have any questions or feedback relating to the API, please [reach out](https://cryptick.net/contact)!
 
-This example API documentation page was created with [Slate](https://github.com/slatedocs/slate). Feel free to edit it and use it as a base for your own API's documentation.
+## Endpoints
+
+Cryptick currently has 2 endpoints you can integrate with: Server and Edge.
+
+### Server Endpoints
+
+The server handles the following requests:
+
+- `GET /v1/candleSets`
+- `GET /v1/candles`
+
+API Endpoint: `https://api.cryptick.net`
+
+WebSocket Endpoint: `wss://api.cryptick.net/v1/realtime`
+
+### Edge Endpoints
+
+The edge handles the following requests:
+
+- `GET /v1/markets`
+- `GET /v1/trades`
+
+API Endpoint: `https://edge.cryptick.net`
+
+WebSocket Endpoint: `wss://edge.cryptick.net/v1/realtime`
+
+As Cryptick grows, multiple edge endpoints will become available to reduce latency.
 
 # Authentication
 
-> To authorize, use this code:
+Both HTTP requests and WebSockets are authenticated using the header: `Authorization: <key>` (replacing `<key>` with your API key).
 
-```ruby
-require 'kittn'
+All HTTP requests must be authenticated.
 
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-```
+All WebSocket requests must be authenticated EXCEPT for these subscriptions:
 
-```python
-import kittn
+- Realtime Trades
+- Order Books
+- Candles for the public Candle Sets:
+  - 1 Minute
+  - 15 Minute
+  - 1 Hour
+  - 4 Hour
+  - 1 Day
+  - 100k Tick
+  - 1M Volume (Quote)
 
-api = kittn.authorize('meowmeowmeow')
-```
+WebSockets can only be authenticated as part of the initial connection. You will need to create a new connection if you need to authenticate with a different API key or didn't authenticate initially.
 
-```shell
-# With shell, you can just pass the correct header with each request
-curl "api_endpoint_here" \
-  -H "Authorization: meowmeowmeow"
-```
+# Rate Limits
 
-```javascript
-const kittn = require('kittn');
+Current rate limit:  10 requests / 5 seconds.
 
-let api = kittn.authorize('meowmeowmeow');
-```
+Requests are limited per account, across all connections.
 
-> Make sure to replace `meowmeowmeow` with your API key.
+If you make 5 requests via HTTP and 6 requests via WebSocket in under 5 seconds, the last request will be rate limited.
 
-Kittn uses API keys to allow access to the API. You can register a new Kittn API key at our [developer portal](http://example.com/developers).
+## HTTP Rate Limits
 
-Kittn expects for the API key to be included in all API requests to the server in a header that looks like the following:
-
-`Authorization: meowmeowmeow`
-
-<aside class="notice">
-You must replace <code>meowmeowmeow</code> with your personal API key.
-</aside>
-
-# Kittens
-
-## Get All Kittens
-
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.get
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-api.kittens.get()
-```
-
-```shell
-curl "http://example.com/api/kittens" \
-  -H "Authorization: meowmeowmeow"
-```
-
-```javascript
-const kittn = require('kittn');
-
-let api = kittn.authorize('meowmeowmeow');
-let kittens = api.kittens.get();
-```
-
-> The above command returns JSON structured like this:
-
-```json
-[
-  {
-    "id": 1,
-    "name": "Fluffums",
-    "breed": "calico",
-    "fluffiness": 6,
-    "cuteness": 7
-  },
-  {
-    "id": 2,
-    "name": "Max",
-    "breed": "unknown",
-    "fluffiness": 5,
-    "cuteness": 10
-  }
-]
-```
-
-This endpoint retrieves all kittens.
-
-### HTTP Request
-
-`GET http://example.com/api/kittens`
-
-### Query Parameters
-
-Parameter | Default | Description
---------- | ------- | -----------
-include_cats | false | If set to true, the result will also include cats.
-available | true | If set to false, the result will include kittens that have already been adopted.
-
-<aside class="success">
-Remember — a happy kitten is an authenticated kitten!
-</aside>
-
-## Get a Specific Kitten
-
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.get(2)
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-api.kittens.get(2)
-```
-
-```shell
-curl "http://example.com/api/kittens/2" \
-  -H "Authorization: meowmeowmeow"
-```
-
-```javascript
-const kittn = require('kittn');
-
-let api = kittn.authorize('meowmeowmeow');
-let max = api.kittens.get(2);
-```
-
-> The above command returns JSON structured like this:
+> HTTP Rejected Response (Status: 429):
 
 ```json
 {
-  "id": 2,
-  "name": "Max",
-  "breed": "unknown",
-  "fluffiness": 5,
-  "cuteness": 10
+  "error": "Too many requests"
 }
 ```
 
-This endpoint retrieves a specific kitten.
+All HTTP responses will have headers `X-RateLimit-Limit` and `X-RateLimit-Remaining`.
 
-<aside class="warning">Inside HTML code blocks like this one, you can't use Markdown, so use <code>&lt;code&gt;</code> blocks to denote code.</aside>
+- `X-RateLimit-Limit` indicates the maximum number of requests in a timeframe.
+- `X-RateLimit-Remaining` indicates the number of requests remaining in a timeframe. 
 
-### HTTP Request
+HTTP rejected responses will have a status code of 429 and header `X-RateLimit-Retry`. 
 
-`GET http://example.com/kittens/<ID>`
+- `X-RateLimit-Retry` indicates the number of milliseconds to wait before at least 1 request will be successful.
 
-### URL Parameters
+## WebSocket Rate Limits
 
-Parameter | Description
---------- | -----------
-ID | The ID of the kitten to retrieve
-
-## Delete a Specific Kitten
-
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.delete(2)
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-api.kittens.delete(2)
-```
-
-```shell
-curl "http://example.com/api/kittens/2" \
-  -X DELETE \
-  -H "Authorization: meowmeowmeow"
-```
-
-```javascript
-const kittn = require('kittn');
-
-let api = kittn.authorize('meowmeowmeow');
-let max = api.kittens.delete(2);
-```
-
-> The above command returns JSON structured like this:
+> WebSocket Rejected Response (with 500ms retry value):
 
 ```json
 {
-  "id": 2,
-  "deleted" : ":("
+  "error": "Too many requests",
+  "retry": 500
 }
 ```
 
-This endpoint deletes a specific kitten.
+Unauthenticated WebSockets are subject to the same limits (20 requests / 10 seconds) per connection.
 
-### HTTP Request
-
-`DELETE http://example.com/kittens/<ID>`
-
-### URL Parameters
-
-Parameter | Description
---------- | -----------
-ID | The ID of the kitten to delete
-
+WebSocket rejected requests will have a `retry` key indicating the number of milliseconds to wait before sending another request.
