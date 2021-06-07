@@ -286,12 +286,9 @@
     <link href="stylesheets/print-953e3353.css" rel="stylesheet" media="print" />
       <script src="javascripts/all-a9fde460.js"></script>
 
-    <script>
-      $(function() { setupCodeCopy(); });
-    </script>
   </head>
 
-  <body class="index" data-languages="[&quot;shell&quot;,&quot;ruby&quot;,&quot;python&quot;,&quot;javascript&quot;]">
+  <body class="index" data-languages="[]">
     <a href="#" id="nav-button">
       <span>
         NAV
@@ -299,13 +296,7 @@
       </span>
     </a>
     <div class="toc-wrapper">
-      <img src="images/logo-1e815a84.png" class="logo" alt="" />
-        <div class="lang-selector">
-              <a href="#" data-language-name="shell">shell</a>
-              <a href="#" data-language-name="ruby">ruby</a>
-              <a href="#" data-language-name="python">python</a>
-              <a href="#" data-language-name="javascript">javascript</a>
-        </div>
+      <img src="images/logo-a7ffba07.png" class="logo" alt="" />
         <div class="search">
           <input type="text" class="search" id="input-search" placeholder="Search">
         </div>
@@ -313,221 +304,1033 @@
       <ul id="toc" class="toc-list-h1">
           <li>
             <a href="#introduction" class="toc-h1 toc-link" data-title="Introduction">Introduction</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#endpoints" class="toc-h2 toc-link" data-title="Endpoints">Endpoints</a>
+                  </li>
+              </ul>
           </li>
           <li>
             <a href="#authentication" class="toc-h1 toc-link" data-title="Authentication">Authentication</a>
           </li>
           <li>
-            <a href="#kittens" class="toc-h1 toc-link" data-title="Kittens">Kittens</a>
+            <a href="#rate-limits" class="toc-h1 toc-link" data-title="Rate Limits">Rate Limits</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#get-all-kittens" class="toc-h2 toc-link" data-title="Get All Kittens">Get All Kittens</a>
+                    <a href="#http-rate-limits" class="toc-h2 toc-link" data-title="HTTP Rate Limits">HTTP Rate Limits</a>
                   </li>
                   <li>
-                    <a href="#get-a-specific-kitten" class="toc-h2 toc-link" data-title="Get a Specific Kitten">Get a Specific Kitten</a>
+                    <a href="#websocket-rate-limits" class="toc-h2 toc-link" data-title="WebSocket Rate Limits">WebSocket Rate Limits</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#http" class="toc-h1 toc-link" data-title="HTTP">HTTP</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#candle-sets-http" class="toc-h2 toc-link" data-title="Candle Sets (HTTP)">Candle Sets (HTTP)</a>
                   </li>
                   <li>
-                    <a href="#delete-a-specific-kitten" class="toc-h2 toc-link" data-title="Delete a Specific Kitten">Delete a Specific Kitten</a>
+                    <a href="#candles-http" class="toc-h2 toc-link" data-title="Candles (HTTP)">Candles (HTTP)</a>
+                  </li>
+                  <li>
+                    <a href="#markets-http" class="toc-h2 toc-link" data-title="Markets (HTTP)">Markets (HTTP)</a>
+                  </li>
+                  <li>
+                    <a href="#trades-http" class="toc-h2 toc-link" data-title="Trades (HTTP)">Trades (HTTP)</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#websocket" class="toc-h1 toc-link" data-title="WebSocket">WebSocket</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#websocket-introduction" class="toc-h2 toc-link" data-title="WebSocket Introduction">WebSocket Introduction</a>
+                  </li>
+                  <li>
+                    <a href="#websocket-subscriptions" class="toc-h2 toc-link" data-title="WebSocket Subscriptions">WebSocket Subscriptions</a>
+                  </li>
+                  <li>
+                    <a href="#websocket-data-requests" class="toc-h2 toc-link" data-title="WebSocket Data Requests">WebSocket Data Requests</a>
+                  </li>
+                  <li>
+                    <a href="#candle-sets-websocket" class="toc-h2 toc-link" data-title="Candle Sets (WebSocket)">Candle Sets (WebSocket)</a>
+                  </li>
+                  <li>
+                    <a href="#candles-websocket" class="toc-h2 toc-link" data-title="Candles (WebSocket)">Candles (WebSocket)</a>
+                  </li>
+                  <li>
+                    <a href="#markets-websocket" class="toc-h2 toc-link" data-title="Markets (WebSocket)">Markets (WebSocket)</a>
+                  </li>
+                  <li>
+                    <a href="#trades-websocket" class="toc-h2 toc-link" data-title="Trades (WebSocket)">Trades (WebSocket)</a>
                   </li>
               </ul>
           </li>
           <li>
             <a href="#errors" class="toc-h1 toc-link" data-title="Errors">Errors</a>
           </li>
+          <li>
+            <a href="#enums" class="toc-h1 toc-link" data-title="Enums">Enums</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#candle-set-type" class="toc-h2 toc-link" data-title="Candle Set Type">Candle Set Type</a>
+                  </li>
+                  <li>
+                    <a href="#candle-set-time-type" class="toc-h2 toc-link" data-title="Candle Set Time Type">Candle Set Time Type</a>
+                  </li>
+                  <li>
+                    <a href="#market-type" class="toc-h2 toc-link" data-title="Market Type">Market Type</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#notes" class="toc-h1 toc-link" data-title="Notes">Notes</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#base-quote-currency-definition" class="toc-h2 toc-link" data-title="Base / Quote Currency Definition">Base / Quote Currency Definition</a>
+                  </li>
+                  <li>
+                    <a href="#buyer-maker-definition" class="toc-h2 toc-link" data-title="Buyer Maker Definition">Buyer Maker Definition</a>
+                  </li>
+              </ul>
+          </li>
       </ul>
         <ul class="toc-footer">
             <li><a href='#'>Sign Up for a Developer Key</a></li>
-            <li><a href='https://github.com/slatedocs/slate'>Documentation Powered by Slate</a></li>
         </ul>
     </div>
     <div class="page-wrapper">
       <div class="dark-box"></div>
       <div class="content">
         <h1 id='introduction'>Introduction</h1>
-<p>Welcome to the Kittn API! You can use our API to access Kittn API endpoints, which can get information on various cats, kittens, and breeds in our database.</p>
+<p>Welcome to the Cryptick API!</p>
 
-<p>We have language bindings in Shell, Ruby, Python, and JavaScript! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.</p>
+<p>If you have any questions or feedback relating to the API, please <a href="https://cryptick.net/contact">reach out</a>!</p>
+<h2 id='endpoints'>Endpoints</h2>
+<p>Cryptick currently has 2 endpoints you can integrate with: Server and Edge.</p>
+<h3 id='server-endpoints'>Server Endpoints</h3>
+<p>The server handles the following requests:</p>
 
-<p>This example API documentation page was created with <a href="https://github.com/slatedocs/slate">Slate</a>. Feel free to edit it and use it as a base for your own API&#39;s documentation.</p>
+<ul>
+<li><code>GET /v1/candleSets</code></li>
+<li><code>GET /v1/candles</code></li>
+</ul>
+
+<p>API Endpoint: <code>https://api.cryptick.net</code></p>
+
+<p>WebSocket Endpoint: <code>wss://api.cryptick.net/v1/realtime</code></p>
+<h3 id='edge-endpoints'>Edge Endpoints</h3>
+<p>The edge handles the following requests:</p>
+
+<ul>
+<li><code>GET /v1/markets</code></li>
+<li><code>GET /v1/trades</code></li>
+</ul>
+
+<p>API Endpoint: <code>https://edge.cryptick.net</code></p>
+
+<p>WebSocket Endpoint: <code>wss://edge.cryptick.net/v1/realtime</code></p>
+
+<p>As Cryptick grows, multiple edge endpoints will become available to reduce latency.</p>
 <h1 id='authentication'>Authentication</h1>
+<p>Both HTTP requests and WebSockets are authenticated using the header: <code>Authorization: &lt;key&gt;</code> (replacing <code>&lt;key&gt;</code> with your API key).</p>
+
+<p>All HTTP requests must be authenticated.</p>
+
+<p>All WebSocket requests must be authenticated EXCEPT for these subscriptions:</p>
+
+<ul>
+<li>Realtime Trades</li>
+<li>Order Books</li>
+<li>Candles for the public Candle Sets:
+
+<ul>
+<li>1 Minute</li>
+<li>15 Minute</li>
+<li>1 Hour</li>
+<li>4 Hour</li>
+<li>1 Day</li>
+<li>100k Tick</li>
+<li>1M Volume (Quote)</li>
+</ul></li>
+</ul>
+
+<p>WebSockets can only be authenticated as part of the initial connection. You will need to create a new connection if you need to authenticate with a different API key or didn&#39;t authenticate initially.</p>
+<h1 id='rate-limits'>Rate Limits</h1>
+<p>Current rate limit:  10 requests / 5 seconds.</p>
+
+<p>Requests are limited per account, across all connections.</p>
+
+<p>If you make 5 requests via HTTP and 6 requests via WebSocket in under 5 seconds, the last request will be rate limited.</p>
+<h2 id='http-rate-limits'>HTTP Rate Limits</h2>
 <blockquote>
-<p>To authorize, use this code:</p>
+<p>HTTP Rejected Response (Status: 429):</p>
 </blockquote>
-<div class="highlight"><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="p">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code><span class="c"># With shell, you can just pass the correct header with each request</span>
-curl <span class="s2">"api_endpoint_here"</span> <span class="se">\</span>
-  <span class="nt">-H</span> <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">kittn</span><span class="dl">'</span><span class="p">);</span>
-
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="dl">'</span><span class="s1">meowmeowmeow</span><span class="dl">'</span><span class="p">);</span>
-</code></pre></div>
-<blockquote>
-<p>Make sure to replace <code>meowmeowmeow</code> with your API key.</p>
-</blockquote>
-
-<p>Kittn uses API keys to allow access to the API. You can register a new Kittn API key at our <a href="http://example.com/developers">developer portal</a>.</p>
-
-<p>Kittn expects for the API key to be included in all API requests to the server in a header that looks like the following:</p>
-
-<p><code>Authorization: meowmeowmeow</code></p>
-
-<aside class="notice">
-You must replace <code>meowmeowmeow</code> with your personal API key.
-</aside>
-<h1 id='kittens'>Kittens</h1><h2 id='get-all-kittens'>Get All Kittens</h2><div class="highlight"><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">get</span>
-</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="p">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="n">kittens</span><span class="p">.</span><span class="n">get</span><span class="p">()</span>
-</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/kittens"</span> <span class="se">\</span>
-  <span class="nt">-H</span> <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">kittn</span><span class="dl">'</span><span class="p">);</span>
-
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="dl">'</span><span class="s1">meowmeowmeow</span><span class="dl">'</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">kittens</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">kittens</span><span class="p">.</span><span class="kd">get</span><span class="p">();</span>
-</code></pre></div>
-<blockquote>
-<p>The above command returns JSON structured like this:</p>
-</blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Fluffums"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"calico"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Max"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unknown"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">]</span><span class="w">
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"error"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Too many requests"</span><span class="w">
+</span><span class="p">}</span><span class="w">
 </span></code></pre></div>
-<p>This endpoint retrieves all kittens.</p>
-<h3 id='http-request'>HTTP Request</h3>
-<p><code>GET http://example.com/api/kittens</code></p>
-<h3 id='query-parameters'>Query Parameters</h3>
+<p>All HTTP responses will have headers <code>X-RateLimit-Limit</code> and <code>X-RateLimit-Remaining</code>.</p>
+
+<ul>
+<li><code>X-RateLimit-Limit</code> indicates the maximum number of requests in a timeframe.</li>
+<li><code>X-RateLimit-Remaining</code> indicates the number of requests remaining in a timeframe. </li>
+</ul>
+
+<p>HTTP rejected responses will have a status code of 429 and header <code>X-RateLimit-Retry</code>. </p>
+
+<ul>
+<li><code>X-RateLimit-Retry</code> indicates the number of milliseconds to wait before at least 1 request will be successful.</li>
+</ul>
+<h2 id='websocket-rate-limits'>WebSocket Rate Limits</h2>
+<blockquote>
+<p>WebSocket Rejected Response (with 500ms retry value):</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"error"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Too many requests"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"retry"</span><span class="p">:</span><span class="w"> </span><span class="mi">500</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>Unauthenticated WebSockets are subject to the same limits (20 requests / 10 seconds) per connection.</p>
+
+<p>WebSocket rejected requests will have a <code>retry</code> key indicating the number of milliseconds to wait before sending another request.</p>
+<h1 id='http'>HTTP</h1><h2 id='candle-sets-http'>Candle Sets (HTTP)</h2>
+<blockquote>
+<p>Candle Sets Response Example:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"success"</span><span class="p">:</span><span class="w"> </span><span class="s2">"true"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">239</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"marketId"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"size"</span><span class="p">:</span><span class="w"> </span><span class="mi">15</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"timeType"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>Get a list of accessible candle sets for a given market.</p>
+
+<p>Path: <code>/v1/candleSets</code></p>
+
+<p>Full Endpoint: <code>https://api.cryptick.net/v1/candleSets</code></p>
+<h3 id='candle-sets-request'>Candle Sets Request</h3>
 <table><thead>
 <tr>
-<th>Parameter</th>
-<th>Default</th>
-<th>Description</th>
+<th>Key</th>
+<th>Type</th>
+<th>Details</th>
+<th>Required</th>
 </tr>
 </thead><tbody>
 <tr>
-<td>include_cats</td>
-<td>false</td>
-<td>If set to true, the result will also include cats.</td>
-</tr>
-<tr>
-<td>available</td>
+<td>marketId</td>
+<td>number</td>
+<td>Parent market id</td>
 <td>true</td>
-<td>If set to false, the result will include kittens that have already been adopted.</td>
 </tr>
 </tbody></table>
-
-<aside class="success">
-Remember — a happy kitten is an authenticated kitten!
-</aside>
-<h2 id='get-a-specific-kitten'>Get a Specific Kitten</h2><div class="highlight"><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="p">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="n">kittens</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/kittens/2"</span> <span class="se">\</span>
-  <span class="nt">-H</span> <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">kittn</span><span class="dl">'</span><span class="p">);</span>
-
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="dl">'</span><span class="s1">meowmeowmeow</span><span class="dl">'</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">max</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">kittens</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
-</code></pre></div>
-<blockquote>
-<p>The above command returns JSON structured like this:</p>
-</blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Max"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unknown"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre></div>
-<p>This endpoint retrieves a specific kitten.</p>
-
-<aside class="warning">Inside HTML code blocks like this one, you can't use Markdown, so use <code>&lt;code&gt;</code> blocks to denote code.</aside>
-<h3 id='http-request-2'>HTTP Request</h3>
-<p><code>GET http://example.com/kittens/&lt;ID&gt;</code></p>
-<h3 id='url-parameters'>URL Parameters</h3>
+<h3 id='candle-sets-response'>Candle Sets Response</h3>
 <table><thead>
 <tr>
-<th>Parameter</th>
-<th>Description</th>
+<th>Key</th>
+<th>Type</th>
+<th>Details</th>
 </tr>
 </thead><tbody>
 <tr>
-<td>ID</td>
-<td>The ID of the kitten to retrieve</td>
+<td>id</td>
+<td>number</td>
+<td>Candle set id</td>
+</tr>
+<tr>
+<td>marketId</td>
+<td>number</td>
+<td>Candle set market id</td>
+</tr>
+<tr>
+<td>type</td>
+<td>number</td>
+<td><a href="#candle-set-type">Candle set type</a></td>
+</tr>
+<tr>
+<td>size</td>
+<td>number</td>
+<td>Candle set size</td>
+</tr>
+<tr>
+<td>timeType</td>
+<td>number</td>
+<td><a href="#candle-set-time-type">Candle set time type</a></td>
 </tr>
 </tbody></table>
-<h2 id='delete-a-specific-kitten'>Delete a Specific Kitten</h2><div class="highlight"><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">delete</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="p">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="n">kittens</span><span class="p">.</span><span class="n">delete</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/kittens/2"</span> <span class="se">\</span>
-  <span class="nt">-X</span> DELETE <span class="se">\</span>
-  <span class="nt">-H</span> <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">kittn</span><span class="dl">'</span><span class="p">);</span>
-
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="dl">'</span><span class="s1">meowmeowmeow</span><span class="dl">'</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">max</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">kittens</span><span class="p">.</span><span class="k">delete</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
-</code></pre></div>
+<h2 id='candles-http'>Candles (HTTP)</h2>
 <blockquote>
-<p>The above command returns JSON structured like this:</p>
+<p>Candles Response Example:</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"deleted"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">":("</span><span class="w">
+  </span><span class="nl">"success"</span><span class="p">:</span><span class="w"> </span><span class="s2">"true"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"candleSetId"</span><span class="p">:</span><span class="w"> </span><span class="mi">16</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">601</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"fromTradeId"</span><span class="p">:</span><span class="w"> </span><span class="mi">60000001</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"toTradeId"</span><span class="p">:</span><span class="w"> </span><span class="mi">60100000</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"open"</span><span class="p">:</span><span class="w"> </span><span class="mf">3666.6</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"high"</span><span class="p">:</span><span class="w"> </span><span class="mi">3980</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"low"</span><span class="p">:</span><span class="w"> </span><span class="mf">3662.4</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"close"</span><span class="p">:</span><span class="w"> </span><span class="mf">3902.6</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"volume"</span><span class="p">:</span><span class="w"> </span><span class="mi">397427000</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"baseVolume"</span><span class="p">:</span><span class="w"> </span><span class="mi">103128</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"buyerMakerVolume"</span><span class="p">:</span><span class="w"> </span><span class="mi">186263000</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"buyerMakerBaseVolume"</span><span class="p">:</span><span class="w"> </span><span class="mf">48273.6</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"vwap"</span><span class="p">:</span><span class="w"> </span><span class="mf">3854.7</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-05-10T02:17:13.524Z"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
-<p>This endpoint deletes a specific kitten.</p>
-<h3 id='http-request-3'>HTTP Request</h3>
-<p><code>DELETE http://example.com/kittens/&lt;ID&gt;</code></p>
-<h3 id='url-parameters-2'>URL Parameters</h3>
+<p>Get a subset of candles from a candle set.</p>
+
+<p>Requests without a <code>fromId</code> are in descending order.</p>
+
+<p>Requests with a <code>fromId</code> are in ascending order.</p>
+
+<p>Path: <code>/v1/candles</code></p>
+
+<p>Full Endpoint: <code>https://api.cryptick.net/v1/candles</code></p>
+<h3 id='candles-http-request'>Candles HTTP Request</h3>
 <table><thead>
 <tr>
-<th>Parameter</th>
-<th>Description</th>
+<th>Key</th>
+<th>Type</th>
+<th>Details</th>
+<th>Required</th>
 </tr>
 </thead><tbody>
 <tr>
-<td>ID</td>
-<td>The ID of the kitten to delete</td>
+<td>candleSetId</td>
+<td>number</td>
+<td>Parent candle set id</td>
+<td>true</td>
+</tr>
+<tr>
+<td>fromId</td>
+<td>number</td>
+<td>Inclusive id of the first candle returned</td>
+<td>false</td>
+</tr>
+<tr>
+<td>limit</td>
+<td>number</td>
+<td>Quantity of candles returned (Max: 1000)</td>
+<td>false</td>
+</tr>
+</tbody></table>
+<h3 id='candles-http-response'>Candles HTTP Response</h3>
+<table><thead>
+<tr>
+<th>Key</th>
+<th>Type</th>
+<th>Details</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>candleSetId</td>
+<td>number</td>
+<td>Candle set id</td>
+</tr>
+<tr>
+<td>id</td>
+<td>number</td>
+<td>Candle id</td>
+</tr>
+<tr>
+<td>fromTradeId</td>
+<td>number</td>
+<td>Id of the earliest included trade</td>
+</tr>
+<tr>
+<td>toTradeId</td>
+<td>number</td>
+<td>Id of the latest included trade</td>
+</tr>
+<tr>
+<td>open</td>
+<td>number</td>
+<td>Candle open price</td>
+</tr>
+<tr>
+<td>high</td>
+<td>number</td>
+<td>Candle high price</td>
+</tr>
+<tr>
+<td>low</td>
+<td>number</td>
+<td>Candle low price</td>
+</tr>
+<tr>
+<td>close</td>
+<td>number</td>
+<td>Candle close price</td>
+</tr>
+<tr>
+<td>volume</td>
+<td>number</td>
+<td>Candle volume in <a href="#base-quote-currency-definition">quote currency</a></td>
+</tr>
+<tr>
+<td>baseVolume</td>
+<td>number</td>
+<td>Candle volume in <a href="#base-quote-currency-definition">base currency</a></td>
+</tr>
+<tr>
+<td>buyerMakerVolume</td>
+<td>number</td>
+<td>Candle market sell / limit buy volume in <a href="#base-quote-currency-definition">quote currency</a></td>
+</tr>
+<tr>
+<td>buyerMakerBaseVolume</td>
+<td>number</td>
+<td>Candle market sell / limit buy volume in <a href="#base-quote-currency-definition">base currency</a></td>
+</tr>
+<tr>
+<td>vwap</td>
+<td>number</td>
+<td>Volume weighted average price</td>
+</tr>
+<tr>
+<td>time</td>
+<td>string</td>
+<td>Candle close time in format: YYYY-MM-DDTHH:mm:ss.sssZ (ISO 8601)</td>
+</tr>
+</tbody></table>
+
+<p>See the <a href="#buyer-maker-definition">BuyerMaker</a> definition.</p>
+<h2 id='markets-http'>Markets (HTTP)</h2>
+<blockquote>
+<p>Markets Response Example:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"success"</span><span class="p">:</span><span class="w"> </span><span class="s2">"true"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"exchange"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Binance"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTCUSDT"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>Get a list of all supported markets.</p>
+
+<p>Path: <code>/v1/markets</code></p>
+
+<p>Full Endpoint: <code>https://edge.cryptick.net/v1/markets</code></p>
+<h3 id='markets-http-request'>Markets HTTP Request</h3>
+<p>This request requires no parameters.</p>
+<h3 id='markets-http-response'>Markets HTTP Response</h3>
+<table><thead>
+<tr>
+<th>Key</th>
+<th>Type</th>
+<th>Details</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>number</td>
+<td>Market id</td>
+</tr>
+<tr>
+<td>exchange</td>
+<td>number</td>
+<td>Market exchange</td>
+</tr>
+<tr>
+<td>symbol</td>
+<td>number</td>
+<td>Market symbol</td>
+</tr>
+<tr>
+<td>type</td>
+<td>number</td>
+<td><a href="#market-type">Market Type</a></td>
+</tr>
+</tbody></table>
+<h2 id='trades-http'>Trades (HTTP)</h2>
+<blockquote>
+<p>Trades Response Example:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"success"</span><span class="p">:</span><span class="w"> </span><span class="s2">"true"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"marketId"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">208226001</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">80</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="mf">3326.5</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"buyerMaker"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"externalId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"abb5694b-d4b5-ea3b-25fc-845d801bf0bc"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-12-11T17:56:59.265Z"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>Get a subset of trades from a market. </p>
+
+<p>Requests without a <code>fromId</code> are in descending order.</p>
+
+<p>Requests with a <code>fromId</code> are in ascending order.</p>
+
+<p>Path: <code>/v1/trades</code></p>
+
+<p>Full Endpoint: <code>https://edge.cryptick.net/v1/trades</code></p>
+<h3 id='trades-http-request'>Trades HTTP Request</h3>
+<table><thead>
+<tr>
+<th>Key</th>
+<th>Type</th>
+<th>Details</th>
+<th>Required</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>marketId</td>
+<td>number</td>
+<td>Parent market id</td>
+<td>true</td>
+</tr>
+<tr>
+<td>fromId</td>
+<td>number</td>
+<td>Inclusive id of the first trade returned</td>
+<td>false</td>
+</tr>
+<tr>
+<td>limit</td>
+<td>number</td>
+<td>Quantity of candles returned (Max: 1000)</td>
+<td>false</td>
+</tr>
+</tbody></table>
+<h3 id='trades-http-response'>Trades HTTP Response</h3>
+<table><thead>
+<tr>
+<th>Key</th>
+<th>Type</th>
+<th>Details</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>marketId</td>
+<td>number</td>
+<td>Parent market id</td>
+</tr>
+<tr>
+<td>id</td>
+<td>number</td>
+<td>Trade id</td>
+</tr>
+<tr>
+<td>amount</td>
+<td>number</td>
+<td>Trade amount in <a href="#base-quote-currency-definition">quote currency</a></td>
+</tr>
+<tr>
+<td>price</td>
+<td>number</td>
+<td>Trade price</td>
+</tr>
+<tr>
+<td>buyerMaker</td>
+<td>boolean</td>
+<td><a href="#buyer-maker-definition">Trade BuyerMaker</a></td>
+</tr>
+<tr>
+<td>externalId</td>
+<td>string</td>
+<td>Exchange trade id</td>
+</tr>
+<tr>
+<td>time</td>
+<td>string</td>
+<td>Trade time in format: YYYY-MM-DDTHH:mm:ss.sssZ (ISO 8601)</td>
+</tr>
+</tbody></table>
+<h1 id='websocket'>WebSocket</h1><h2 id='websocket-introduction'>WebSocket Introduction</h2>
+<p>WebSocket connections support data requests (like HTTP) and subscriptions.</p>
+
+<p>All requests should be in JSON format.</p>
+<h3 id='websocket-request-topics'>WebSocket Request Topics</h3>
+<blockquote>
+<p>Request Topic Key Example:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"topic"</span><span class="p">:</span><span class="w"> </span><span class="s2">"trades"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>A request topic is required for every request.</p>
+
+<p>Valid Request Topics:</p>
+
+<ul>
+<li><code>trades</code></li>
+<li><code>orderBook</code></li>
+<li><code>markets</code></li>
+<li><code>candles</code></li>
+<li><code>candleSets</code></li>
+</ul>
+<h3 id='websocket-request-ids'>WebSocket Request Ids</h3>
+<blockquote>
+<p>Request Id Key Example:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>An id can be included with any request and will be present on the related response.</p>
+
+<p>This is especially useful for <a href="#websocket-data-requests">data requests</a>.</p>
+<h2 id='websocket-subscriptions'>WebSocket Subscriptions</h2>
+<blockquote>
+<p>Subscribe Request Example:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"topic"</span><span class="p">:</span><span class="w"> </span><span class="s2">"trades"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"subscribe"</span><span class="p">:</span><span class="w"> </span><span class="s2">"trades"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<blockquote>
+<p>Unsubscribe Request Example:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"topic"</span><span class="p">:</span><span class="w"> </span><span class="s2">"candles"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"unsubscribe"</span><span class="p">:</span><span class="w"> </span><span class="s2">"candlesRealtime"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>Subscribe (or unsubscribe) to topics by passing a subscription topic.</p>
+
+<p>Valid Subscription Topics:</p>
+
+<ul>
+<li><code>trades</code> (topic: <code>trades</code>)</li>
+<li><code>orderBook</code> (topic: <code>orderBook</code>)</li>
+<li><code>candlesRealtime</code> (topic: <code>candles</code>)</li>
+<li><code>candlesComplete</code> (topic: <code>candles</code>)</li>
+</ul>
+<h2 id='websocket-data-requests'>WebSocket Data Requests</h2>
+<p>Cryptick supports historical data requests via WebSockets and HTTP requests.</p>
+<h3 id='websocket-intelligent-subscriptions-historical-data-merge'>WebSocket Intelligent Subscriptions (Historical Data Merge)</h3>
+<p>Cryptick provides an easy solution to merge historical data with realtime updates.</p>
+
+<p>This can greatly simplify an automated trading algorithm that needs to use recent historical data to seed indicators, etc.</p>
+
+<p>This supports candles &amp; trades.</p>
+<h2 id='candle-sets-websocket'>Candle Sets (WebSocket)</h2>
+<blockquote>
+<p>Candle Sets Request Example:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"topic"</span><span class="p">:</span><span class="w"> </span><span class="s2">"candleSets"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">420</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"marketId"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<blockquote>
+<p>Candle Sets Response Example:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"topic"</span><span class="p">:</span><span class="w"> </span><span class="s2">"candleSets"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">420</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">239</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"marketId"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"size"</span><span class="p">:</span><span class="w"> </span><span class="mi">15</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"timeType"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>Get a list of accessible candle sets for a given market.</p>
+<h3 id='candle-sets-websocket-request'>Candle Sets WebSocket Request</h3>
+<table><thead>
+<tr>
+<th>Key</th>
+<th>Type</th>
+<th>Details</th>
+<th>Required</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>marketId</td>
+<td>number</td>
+<td>Parent market id</td>
+<td>true</td>
+</tr>
+</tbody></table>
+<h3 id='candle-sets-websocket-response'>Candle Sets WebSocket Response</h3>
+<table><thead>
+<tr>
+<th>Key</th>
+<th>Type</th>
+<th>Details</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>number</td>
+<td>Candle set id</td>
+</tr>
+<tr>
+<td>marketId</td>
+<td>number</td>
+<td>Candle set market id</td>
+</tr>
+<tr>
+<td>type</td>
+<td>number</td>
+<td><a href="#candle-set-type">Candle set type</a></td>
+</tr>
+<tr>
+<td>size</td>
+<td>number</td>
+<td>Candle set size</td>
+</tr>
+<tr>
+<td>timeType</td>
+<td>number</td>
+<td><a href="#candle-set-time-type">Candle set time type</a></td>
+</tr>
+</tbody></table>
+<h2 id='candles-websocket'>Candles (WebSocket)</h2>
+<blockquote>
+<p>Candles Request Example:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"topic"</span><span class="p">:</span><span class="w"> </span><span class="s2">"candles"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">420</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"candleSetId"</span><span class="p">:</span><span class="w"> </span><span class="mi">239</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"fromId"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"limit"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<blockquote>
+<p>Candles Response Example:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"topic"</span><span class="p">:</span><span class="w"> </span><span class="s2">"candles"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">420</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"candleSetId"</span><span class="p">:</span><span class="w"> </span><span class="mi">239</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"fromTradeId"</span><span class="p">:</span><span class="w"> </span><span class="mi">5359</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"toTradeId"</span><span class="p">:</span><span class="w"> </span><span class="mi">6549</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"open"</span><span class="p">:</span><span class="w"> </span><span class="mi">5922</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"high"</span><span class="p">:</span><span class="w"> </span><span class="mi">5930</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"low"</span><span class="p">:</span><span class="w"> </span><span class="mi">5908</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"close"</span><span class="p">:</span><span class="w"> </span><span class="mi">5911</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"volume"</span><span class="p">:</span><span class="w"> </span><span class="mi">3071910</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"baseVolume"</span><span class="p">:</span><span class="w"> </span><span class="mi">519018</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"buyerMakerVolume"</span><span class="p">:</span><span class="w"> </span><span class="mi">771444</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"buyerMakerBaseVolume"</span><span class="p">:</span><span class="w"> </span><span class="mi">130384</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"vwap"</span><span class="p">:</span><span class="w"> </span><span class="mf">5918.69</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-03-23T07:11:00.000Z"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>Get a subset of candles from a candle set.</p>
+
+<p>Requests without a <code>fromId</code> are in descending order.</p>
+
+<p>Requests with a <code>fromId</code> are in ascending order.</p>
+<h3 id='candles-websocket-request'>Candles WebSocket Request</h3>
+<table><thead>
+<tr>
+<th>Key</th>
+<th>Type</th>
+<th>Details</th>
+<th>Required</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>candleSetId</td>
+<td>number</td>
+<td>Parent candle set id</td>
+<td>true</td>
+</tr>
+<tr>
+<td>fromId</td>
+<td>number</td>
+<td>Inclusive id of the first candle returned</td>
+<td>false</td>
+</tr>
+<tr>
+<td>limit</td>
+<td>number</td>
+<td>Quantity of candles returned (Max: 1000)</td>
+<td>false</td>
+</tr>
+</tbody></table>
+<h3 id='candles-websocket-response'>Candles WebSocket Response</h3>
+<table><thead>
+<tr>
+<th>Key</th>
+<th>Type</th>
+<th>Details</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>candleSetId</td>
+<td>number</td>
+<td>Candle set id</td>
+</tr>
+<tr>
+<td>id</td>
+<td>number</td>
+<td>Candle id</td>
+</tr>
+<tr>
+<td>fromTradeId</td>
+<td>number</td>
+<td>Id of the earliest included trade</td>
+</tr>
+<tr>
+<td>toTradeId</td>
+<td>number</td>
+<td>Id of the latest included trade</td>
+</tr>
+<tr>
+<td>open</td>
+<td>number</td>
+<td>Candle open price</td>
+</tr>
+<tr>
+<td>high</td>
+<td>number</td>
+<td>Candle high price</td>
+</tr>
+<tr>
+<td>low</td>
+<td>number</td>
+<td>Candle low price</td>
+</tr>
+<tr>
+<td>close</td>
+<td>number</td>
+<td>Candle close price</td>
+</tr>
+<tr>
+<td>volume</td>
+<td>number</td>
+<td>Candle volume in <a href="#base-quote-currency-definition">quote currency</a></td>
+</tr>
+<tr>
+<td>baseVolume</td>
+<td>number</td>
+<td>Candle volume in <a href="#base-quote-currency-definition">base currency</a></td>
+</tr>
+<tr>
+<td>buyerMakerVolume</td>
+<td>number</td>
+<td>Candle market sell / limit buy volume in <a href="#base-quote-currency-definition">quote currency</a></td>
+</tr>
+<tr>
+<td>buyerMakerBaseVolume</td>
+<td>number</td>
+<td>Candle market sell / limit buy volume in <a href="#base-quote-currency-definition">base currency</a></td>
+</tr>
+<tr>
+<td>vwap</td>
+<td>number</td>
+<td>Volume weighted average price</td>
+</tr>
+<tr>
+<td>time</td>
+<td>string</td>
+<td>Candle close time in format: YYYY-MM-DDTHH:mm:ss.sssZ (ISO 8601)</td>
+</tr>
+</tbody></table>
+
+<p>See the <a href="#buyer-maker-definition">BuyerMaker</a> definition.</p>
+<h2 id='markets-websocket'>Markets (WebSocket)</h2>
+<blockquote>
+<p>Markets Request Example:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"topic"</span><span class="p">:</span><span class="w"> </span><span class="s2">"markets"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">420</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<blockquote>
+<p>Markets Response Example:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"topic"</span><span class="p">:</span><span class="w"> </span><span class="s2">"markets"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">420</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"exchange"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Binance"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTCUSDT"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>Get a list of all supported markets.</p>
+<h3 id='markets-websocket-request'>Markets WebSocket Request</h3>
+<p>This request requires no additional parameters.</p>
+<h3 id='markets-websocket-response'>Markets WebSocket Response</h3>
+<table><thead>
+<tr>
+<th>Key</th>
+<th>Type</th>
+<th>Details</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>number</td>
+<td>Market id</td>
+</tr>
+<tr>
+<td>exchange</td>
+<td>number</td>
+<td>Market exchange</td>
+</tr>
+<tr>
+<td>symbol</td>
+<td>number</td>
+<td>Market symbol</td>
+</tr>
+<tr>
+<td>type</td>
+<td>number</td>
+<td><a href="#market-type">Market Type</a></td>
+</tr>
+</tbody></table>
+<h2 id='trades-websocket'>Trades (WebSocket)</h2>
+<blockquote>
+<p>Trades Request Example</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"topic"</span><span class="p">:</span><span class="w"> </span><span class="s2">"trades"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">420</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"marketId"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"fromId"</span><span class="p">:</span><span class="w"> </span><span class="mi">543444001</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"limit"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<blockquote>
+<p>Trades Response Example:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"topic"</span><span class="p">:</span><span class="w"> </span><span class="s2">"trades"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">420</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"marketId"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">543444001</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mf">3676.75</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="mf">39114.4</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"buyerMaker"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"externalId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"544023881"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-05-27T18:53:24.674Z"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>Get a subset of trades from a market.</p>
+
+<p>Requests without a <code>fromId</code> are in descending order.</p>
+
+<p>Requests with a <code>fromId</code> are in ascending order.</p>
+<h3 id='trades-websocket-request'>Trades WebSocket Request</h3>
+<table><thead>
+<tr>
+<th>Key</th>
+<th>Type</th>
+<th>Details</th>
+<th>Required</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>marketId</td>
+<td>number</td>
+<td>Parent market id</td>
+<td>true</td>
+</tr>
+<tr>
+<td>fromId</td>
+<td>number</td>
+<td>Inclusive id of the first trade returned</td>
+<td>false</td>
+</tr>
+<tr>
+<td>limit</td>
+<td>number</td>
+<td>Quantity of candles returned (Max: 1000)</td>
+<td>false</td>
+</tr>
+</tbody></table>
+<h3 id='trades-websocket-response'>Trades WebSocket Response</h3>
+<table><thead>
+<tr>
+<th>Key</th>
+<th>Type</th>
+<th>Details</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>marketId</td>
+<td>number</td>
+<td>Parent market id</td>
+</tr>
+<tr>
+<td>id</td>
+<td>number</td>
+<td>Trade id</td>
+</tr>
+<tr>
+<td>amount</td>
+<td>number</td>
+<td>Trade amount in <a href="#base-quote-currency-definition">quote currency</a></td>
+</tr>
+<tr>
+<td>price</td>
+<td>number</td>
+<td>Trade price</td>
+</tr>
+<tr>
+<td>buyerMaker</td>
+<td>boolean</td>
+<td><a href="#buyer-maker-definition">Trade BuyerMaker</a></td>
+</tr>
+<tr>
+<td>externalId</td>
+<td>string</td>
+<td>Exchange trade id</td>
+</tr>
+<tr>
+<td>time</td>
+<td>string</td>
+<td>Trade time in format: YYYY-MM-DDTHH:mm:ss.sssZ (ISO 8601)</td>
 </tr>
 </tbody></table>
 <h1 id='errors'>Errors</h1>
-<aside class="notice">
-This error section is stored in a separate file in <code>includes/_errors.md</code>. Slate allows you to optionally separate out your docs into many files...just save them to the <code>includes</code> folder and add them to the top of your <code>index.md</code>'s frontmatter. Files are included in the order listed.
-</aside>
+<p>Cryptick uses the following error codes:</p>
 
-<p>The Kittn API uses the following error codes:</p>
+<p>All responses except those with status code <code>503</code> should have <code>content-type</code>: <code>application/json</code>.</p>
 
 <table><thead>
 <tr>
@@ -541,54 +1344,122 @@ This error section is stored in a separate file in <code>includes/_errors.md</co
 </tr>
 <tr>
 <td>401</td>
-<td>Unauthorized -- Your API key is wrong.</td>
-</tr>
-<tr>
-<td>403</td>
-<td>Forbidden -- The kitten requested is hidden for administrators only.</td>
-</tr>
-<tr>
-<td>404</td>
-<td>Not Found -- The specified kitten could not be found.</td>
-</tr>
-<tr>
-<td>405</td>
-<td>Method Not Allowed -- You tried to access a kitten with an invalid method.</td>
-</tr>
-<tr>
-<td>406</td>
-<td>Not Acceptable -- You requested a format that isn&#39;t json.</td>
-</tr>
-<tr>
-<td>410</td>
-<td>Gone -- The kitten requested has been removed from our servers.</td>
-</tr>
-<tr>
-<td>418</td>
-<td>I&#39;m a teapot.</td>
+<td>Unauthorized -- Review the <a href="#authentication">authentication docs</a>.</td>
 </tr>
 <tr>
 <td>429</td>
-<td>Too Many Requests -- You&#39;re requesting too many kittens! Slow down!</td>
+<td>Too Many Requests -- Review the <a href="#rate-limits">rate limit docs</a>.</td>
 </tr>
 <tr>
 <td>500</td>
-<td>Internal Server Error -- We had a problem with our server. Try again later.</td>
+<td>Internal Server Error -- If the behavior is consistent, please <a href="https://cryptick.net/contact">reach out</a>.</td>
 </tr>
 <tr>
 <td>503</td>
-<td>Service Unavailable -- We&#39;re temporarily offline for maintenance. Please try again later.</td>
+<td>Service Unavailable -- Servers may be restarting. If the behavior continues, please <a href="https://cryptick.net/contact">reach out</a>.</td>
 </tr>
 </tbody></table>
+<h1 id='enums'>Enums</h1><h2 id='candle-set-type'>Candle Set Type</h2>
+<table><thead>
+<tr>
+<th>Key</th>
+<th>Value</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>1</td>
+<td>Time</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Tick</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Base Volume</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Quote Volume</td>
+</tr>
+</tbody></table>
+<h2 id='candle-set-time-type'>Candle Set Time Type</h2>
+<table><thead>
+<tr>
+<th>Key</th>
+<th>Value</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>0</td>
+<td>None</td>
+</tr>
+<tr>
+<td>1</td>
+<td>Second</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Minute</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Hour</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Day</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Week</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Month</td>
+</tr>
+</tbody></table>
+<h2 id='market-type'>Market Type</h2>
+<table><thead>
+<tr>
+<th>Key</th>
+<th>Value</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>0</td>
+<td>Linear Perpetual</td>
+</tr>
+<tr>
+<td>1</td>
+<td>Inverse Perpetual</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Quanto Perpetual</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Spot</td>
+</tr>
+</tbody></table>
+<h1 id='notes'>Notes</h1><h2 id='base-quote-currency-definition'>Base / Quote Currency Definition</h2>
+<p>Base Currency is the first currency that appears in a crypto market pair.</p>
+
+<p>Quote Currency is the second currency that appears in a crypto market pair.</p>
+
+<p><strong>Example</strong>: For the market BTC / USD, the base currency is BTC (Bitcoin) and the quote currency is USD (U.S. Dollar).</p>
+<h2 id='buyer-maker-definition'>Buyer Maker Definition</h2>
+<p>These examples define limit orders as orders that do NOT execute immediately and are placed on the order book.</p>
+
+<p>These examples define market orders as orders that execute immediately and are NOT placed on the order book.</p>
+
+<p><strong>Example</strong>: When a market SELL order is executed and matched against a passive limit BUY order, Cryptick records this trade as <code>buyerMaker: true</code>.</p>
+
+<p><strong>Example</strong>: When a market BUY order is executed and matched against a passive limit SELL order, Cryptick records this trade as <code>buyerMaker: false</code>.</p>
 
       </div>
       <div class="dark-box">
-          <div class="lang-selector">
-                <a href="#" data-language-name="shell">shell</a>
-                <a href="#" data-language-name="ruby">ruby</a>
-                <a href="#" data-language-name="python">python</a>
-                <a href="#" data-language-name="javascript">javascript</a>
-          </div>
       </div>
     </div>
   </body>
